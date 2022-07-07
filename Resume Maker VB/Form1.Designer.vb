@@ -58,9 +58,24 @@ Partial Class Form1
         Me.labelLastName = New System.Windows.Forms.Label()
         Me.jsonFolderSelect = New System.Windows.Forms.FolderBrowserDialog()
         Me.jsonFileSelect = New System.Windows.Forms.OpenFileDialog()
+        Me.buttonRemoveRowCertificates = New System.Windows.Forms.Button()
+        Me.buttonAddRowCertificates = New System.Windows.Forms.Button()
+        Me.groupCertificates = New System.Windows.Forms.GroupBox()
+        Me.tableCertificates = New System.Windows.Forms.DataGridView()
+        Me.inputTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.inputIssued = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.buttonRemoveRowSkills = New System.Windows.Forms.Button()
+        Me.buttonAddRowSkills = New System.Windows.Forms.Button()
+        Me.groupSkills = New System.Windows.Forms.GroupBox()
+        Me.tableSkills = New System.Windows.Forms.DataGridView()
+        Me.inputSkill = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.tableEducational, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupWorkingExperience.SuspendLayout()
         CType(Me.tableExperience, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.groupCertificates.SuspendLayout()
+        CType(Me.tableCertificates, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.groupSkills.SuspendLayout()
+        CType(Me.tableSkills, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'labelFirstName
@@ -266,7 +281,7 @@ Partial Class Form1
         Me.buttonGenerateResume.BackColor = System.Drawing.Color.Aqua
         Me.buttonGenerateResume.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonGenerateResume.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonGenerateResume.Location = New System.Drawing.Point(444, 777)
+        Me.buttonGenerateResume.Location = New System.Drawing.Point(444, 1191)
         Me.buttonGenerateResume.Name = "buttonGenerateResume"
         Me.buttonGenerateResume.Size = New System.Drawing.Size(157, 23)
         Me.buttonGenerateResume.TabIndex = 13
@@ -279,7 +294,7 @@ Partial Class Form1
         Me.buttonGenerateJSON.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonGenerateJSON.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.buttonGenerateJSON.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.buttonGenerateJSON.Location = New System.Drawing.Point(20, 774)
+        Me.buttonGenerateJSON.Location = New System.Drawing.Point(20, 1188)
         Me.buttonGenerateJSON.Name = "buttonGenerateJSON"
         Me.buttonGenerateJSON.Size = New System.Drawing.Size(134, 23)
         Me.buttonGenerateJSON.TabIndex = 14
@@ -290,7 +305,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Enabled = False
-        Me.Label1.Location = New System.Drawing.Point(221, 808)
+        Me.Label1.Location = New System.Drawing.Point(221, 1222)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(0, 15)
         Me.Label1.TabIndex = 15
@@ -397,12 +412,139 @@ Partial Class Form1
         Me.labelLastName.TabIndex = 23
         Me.labelLastName.Text = "Last Name:"
         '
+        'buttonRemoveRowCertificates
+        '
+        Me.buttonRemoveRowCertificates.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.buttonRemoveRowCertificates.BackColor = System.Drawing.Color.Aqua
+        Me.buttonRemoveRowCertificates.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.buttonRemoveRowCertificates.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.buttonRemoveRowCertificates.Location = New System.Drawing.Point(577, 934)
+        Me.buttonRemoveRowCertificates.Name = "buttonRemoveRowCertificates"
+        Me.buttonRemoveRowCertificates.Size = New System.Drawing.Size(24, 23)
+        Me.buttonRemoveRowCertificates.TabIndex = 26
+        Me.buttonRemoveRowCertificates.Text = "-"
+        Me.buttonRemoveRowCertificates.UseVisualStyleBackColor = False
+        '
+        'buttonAddRowCertificates
+        '
+        Me.buttonAddRowCertificates.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.buttonAddRowCertificates.BackColor = System.Drawing.Color.Aqua
+        Me.buttonAddRowCertificates.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.buttonAddRowCertificates.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.buttonAddRowCertificates.Location = New System.Drawing.Point(547, 934)
+        Me.buttonAddRowCertificates.Name = "buttonAddRowCertificates"
+        Me.buttonAddRowCertificates.Size = New System.Drawing.Size(24, 23)
+        Me.buttonAddRowCertificates.TabIndex = 25
+        Me.buttonAddRowCertificates.Text = "+"
+        Me.buttonAddRowCertificates.UseVisualStyleBackColor = False
+        '
+        'groupCertificates
+        '
+        Me.groupCertificates.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.groupCertificates.Controls.Add(Me.tableCertificates)
+        Me.groupCertificates.Location = New System.Drawing.Point(13, 761)
+        Me.groupCertificates.Name = "groupCertificates"
+        Me.groupCertificates.Size = New System.Drawing.Size(528, 199)
+        Me.groupCertificates.TabIndex = 24
+        Me.groupCertificates.TabStop = False
+        Me.groupCertificates.Text = "Certificates"
+        '
+        'tableCertificates
+        '
+        Me.tableCertificates.AllowUserToAddRows = False
+        Me.tableCertificates.AllowUserToDeleteRows = False
+        Me.tableCertificates.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tableCertificates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.tableCertificates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tableCertificates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.inputTitle, Me.inputIssued})
+        Me.tableCertificates.Location = New System.Drawing.Point(6, 22)
+        Me.tableCertificates.Name = "tableCertificates"
+        Me.tableCertificates.RowTemplate.Height = 25
+        Me.tableCertificates.Size = New System.Drawing.Size(515, 171)
+        Me.tableCertificates.TabIndex = 1
+        '
+        'inputTitle
+        '
+        Me.inputTitle.HeaderText = "Title"
+        Me.inputTitle.Name = "inputTitle"
+        '
+        'inputIssued
+        '
+        Me.inputIssued.HeaderText = "Issue Date"
+        Me.inputIssued.Name = "inputIssued"
+        '
+        'buttonRemoveRowSkills
+        '
+        Me.buttonRemoveRowSkills.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.buttonRemoveRowSkills.BackColor = System.Drawing.Color.Aqua
+        Me.buttonRemoveRowSkills.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.buttonRemoveRowSkills.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.buttonRemoveRowSkills.Location = New System.Drawing.Point(577, 1139)
+        Me.buttonRemoveRowSkills.Name = "buttonRemoveRowSkills"
+        Me.buttonRemoveRowSkills.Size = New System.Drawing.Size(24, 23)
+        Me.buttonRemoveRowSkills.TabIndex = 29
+        Me.buttonRemoveRowSkills.Text = "-"
+        Me.buttonRemoveRowSkills.UseVisualStyleBackColor = False
+        '
+        'buttonAddRowSkills
+        '
+        Me.buttonAddRowSkills.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.buttonAddRowSkills.BackColor = System.Drawing.Color.Aqua
+        Me.buttonAddRowSkills.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.buttonAddRowSkills.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.buttonAddRowSkills.Location = New System.Drawing.Point(547, 1139)
+        Me.buttonAddRowSkills.Name = "buttonAddRowSkills"
+        Me.buttonAddRowSkills.Size = New System.Drawing.Size(24, 23)
+        Me.buttonAddRowSkills.TabIndex = 28
+        Me.buttonAddRowSkills.Text = "+"
+        Me.buttonAddRowSkills.UseVisualStyleBackColor = False
+        '
+        'groupSkills
+        '
+        Me.groupSkills.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.groupSkills.Controls.Add(Me.tableSkills)
+        Me.groupSkills.Location = New System.Drawing.Point(13, 966)
+        Me.groupSkills.Name = "groupSkills"
+        Me.groupSkills.Size = New System.Drawing.Size(528, 199)
+        Me.groupSkills.TabIndex = 27
+        Me.groupSkills.TabStop = False
+        Me.groupSkills.Text = "Skills"
+        '
+        'tableSkills
+        '
+        Me.tableSkills.AllowUserToAddRows = False
+        Me.tableSkills.AllowUserToDeleteRows = False
+        Me.tableSkills.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tableSkills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.tableSkills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tableSkills.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.inputSkill})
+        Me.tableSkills.Location = New System.Drawing.Point(6, 22)
+        Me.tableSkills.Name = "tableSkills"
+        Me.tableSkills.RowTemplate.Height = 25
+        Me.tableSkills.Size = New System.Drawing.Size(515, 171)
+        Me.tableSkills.TabIndex = 1
+        '
+        'inputSkill
+        '
+        Me.inputSkill.HeaderText = "Skill"
+        Me.inputSkill.Name = "inputSkill"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(630, 466)
+        Me.ClientSize = New System.Drawing.Size(630, 749)
+        Me.Controls.Add(Me.buttonRemoveRowSkills)
+        Me.Controls.Add(Me.buttonAddRowSkills)
+        Me.Controls.Add(Me.groupSkills)
+        Me.Controls.Add(Me.buttonRemoveRowCertificates)
+        Me.Controls.Add(Me.buttonAddRowCertificates)
+        Me.Controls.Add(Me.groupCertificates)
         Me.Controls.Add(Me.inputLastName)
         Me.Controls.Add(Me.labelLastName)
         Me.Controls.Add(Me.inputMiddleName)
@@ -435,6 +577,10 @@ Partial Class Form1
         CType(Me.tableEducational, System.ComponentModel.ISupportInitialize).EndInit()
         Me.groupWorkingExperience.ResumeLayout(False)
         CType(Me.tableExperience, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.groupCertificates.ResumeLayout(False)
+        CType(Me.tableCertificates, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.groupSkills.ResumeLayout(False)
+        CType(Me.tableSkills, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -476,4 +622,15 @@ Partial Class Form1
     Friend WithEvents labelLastName As Label
     Friend WithEvents jsonFolderSelect As FolderBrowserDialog
     Friend WithEvents jsonFileSelect As OpenFileDialog
+    Friend WithEvents buttonRemoveRowCertificates As Button
+    Friend WithEvents buttonAddRowCertificates As Button
+    Friend WithEvents groupCertificates As GroupBox
+    Friend WithEvents tableCertificates As DataGridView
+    Friend WithEvents inputTitle As DataGridViewTextBoxColumn
+    Friend WithEvents inputIssued As DataGridViewTextBoxColumn
+    Friend WithEvents buttonRemoveRowSkills As Button
+    Friend WithEvents buttonAddRowSkills As Button
+    Friend WithEvents groupSkills As GroupBox
+    Friend WithEvents tableSkills As DataGridView
+    Friend WithEvents inputSkill As DataGridViewTextBoxColumn
 End Class

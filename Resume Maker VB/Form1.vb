@@ -37,6 +37,25 @@
         End If
     End Sub
 
+    Private Sub buttonAddRowCertificates_Click(sender As Object, e As EventArgs) Handles buttonAddRowCertificates.Click
+        tableCertificates.Rows.Add()
+    End Sub
+    Private Sub buttonRemoveRowCertificates_Click(sender As Object, e As EventArgs) Handles buttonRemoveRowCertificates.Click
+        If tableCertificates.Rows.Count > 0 Then
+            tableCertificates.Rows.RemoveAt(tableCertificates.Rows.Count - 1)
+        End If
+    End Sub
+    Private Sub buttonAddRowSkills_Click(sender As Object, e As EventArgs) Handles buttonAddRowSkills.Click
+        tableSkills.Rows.Add()
+    End Sub
+    Private Sub buttonRemoveRowSkills_Click(sender As Object, e As EventArgs) Handles buttonRemoveRowSkills.Click
+        If tableSkills.Rows.Count > 0 Then
+            tableSkills.Rows.RemoveAt(tableSkills.Rows.Count - 1)
+        End If
+    End Sub
+    ' End of Buttons that control Tables
+
+    ' button for resume pdf
     Private Sub buttonGenerateResume_Click(sender As Object, e As EventArgs) Handles buttonGenerateResume.Click
         If IsRequiredInputComplete() Then
             If jsonFolderSelect.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
