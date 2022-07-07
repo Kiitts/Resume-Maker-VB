@@ -6,7 +6,7 @@ Module PDFController
     ''' generate the resume
     ''' </summary>
     ''' <param name="path">path where to save PDF</param>
-    Public Sub GeneratePDF(path As String)
+    Public Sub GeneratePDF(path As String, withJson As Boolean)
         Dim userInfo As UserInfo = CreateUserInfo()
         Dim doc As Document = New Document(PageSize.LETTER, 48, 48, 48, 48)
         Dim writer As PdfWriter = PdfWriter.GetInstance(doc, New FileStream(
@@ -67,6 +67,17 @@ Module PDFController
                 worktable.AddCell(New Paragraph(workDict("Working Years"), normalFont))
             Next
         End If
+        ' Certificates Table
+        Dim certTable As New PdfPTable(2)
+        If userInfo.Certificates.Count > 0 Then
+            certTable.WidthPercentage = 100
+            certTable.AddCell(New Paragraph("Title", tableHeader))
+            certTable.AddCell(New Paragraph("Issued", tableHeader))
+            For Each certDict As Dictionary(Of String, String) In userInfo.Certificates
+                certTable.AddCell(New Paragraph(certDict("Title"), normalFont))
+                certTable.AddCell(New Paragraph(certDict("Issued"), normalFont))
+            Next
+        End If
 
         ' Creating resume PDF
         doc.Open()
@@ -76,18 +87,29 @@ Module PDFController
         doc.Add(New draw.LineSeparator(1.0F, 100.0F, BaseColor.BLACK, Element.ALIGN_CENTER, 1))
         doc.Add(New Paragraph("Objectives:", subHeader))
         doc.Add(New Paragraph(userInfo.Summary, normalFont))
-        doc.Add(New Paragraph(vbCrLf))
         If userInfo.EducationalAttainment.Count > 0 Then
+            doc.Add(New Paragraph(vbCrLf))
             doc.Add(New Paragraph("Educational Attainment:", subHeader))
             doc.Add(New Paragraph(vbCrLf))
             doc.Add(educTable)
         End If
-        doc.Add(New Paragraph(vbCrLf))
         If userInfo.WorkingExperience.Count > 0 Then
+            doc.Add(New Paragraph(vbCrLf))
             doc.Add(New Paragraph("Working Experience:", subHeader))
             doc.Add(New Paragraph(vbCrLf))
             doc.Add(worktable)
         End If
+        If userInfo.Certificates.Count > 0 Then
+            doc.Add(New Paragraph(vbCrLf))
+            doc.Add(New Paragraph("Certificates:", subHeader))
+            doc.Add(New Paragraph(vbCrLf))
+            doc.Add(certTable)
+        End If
         doc.Close()
+        If withJson Then
+            MessageBox.Show("Resume PDF and JSON successfully generated!", "Success")
+        Else
+            MessageBox.Show("Resume PDF successfully generated!", "Success")
+        End If
     End Sub
 End Module

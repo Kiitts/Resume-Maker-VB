@@ -57,6 +57,7 @@
 
     ' button for resume pdf
     Private Sub buttonGenerateResume_Click(sender As Object, e As EventArgs) Handles buttonGenerateResume.Click
+        Dim withJson As Boolean = False
         If IsRequiredInputComplete() Then
             If jsonFolderSelect.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
                 If MessageBox.Show("Also save Inputs as JSON", "Save as Json",
@@ -64,8 +65,9 @@
                         Windows.Forms.DialogResult.Yes Then
 
                     GenerateJSON(jsonFolderSelect.SelectedPath, False)
+                    withJson = True
                 End If
-                GeneratePDF(jsonFolderSelect.SelectedPath)
+                GeneratePDF(jsonFolderSelect.SelectedPath, withJson)
             End If
         End If
     End Sub
