@@ -19,20 +19,22 @@ Module JSONController
     ''' Generate JSON file
     ''' </summary>
     ''' <param name="path">what directory should the json file be saved</param>
-    Public Sub GenerateJSON(path As String)
+    Public Sub GenerateJSON(path As String, Optional withMessage As Boolean = True)
         Dim userInfo As UserInfo = CreateUserInfo()
 
         Dim json As String = JsonConvert.SerializeObject(userInfo, Formatting.Indented)
 
         File.WriteAllText(path + $"\{userInfo.FirstName}_{userInfo.LastName}.json", json)
-        MessageBox.Show("JSON is now Generated!", "Success!")
+        If withMessage Then
+            MessageBox.Show("JSON is now Generated!", "Success!")
+        End If
     End Sub
 
     ''' <summary>
     ''' Upload the JSON and generate inputs from the selected json file
     ''' </summary>
     ''' <param name="path">reference where the json saved</param>
-    Public Sub UploadJSON(path As String, Optional withMessage As Boolean = True)
+    Public Sub UploadJSON(path As String)
         Dim json As String = File.ReadAllText(path)
         Dim userInfo As UserInfo = CreateUserInfo(json)
         If userInfo IsNot Nothing Then
@@ -67,9 +69,7 @@ Module JSONController
                         workDict("Working Years")
                 Next
             End If
-            If withMessage Then
-                MessageBox.Show("Inputs are now Generated!", "Success!")
-            End If
+            MessageBox.Show("Inputs are now Generated!", "Success!")
         End If
     End Sub
 
