@@ -12,6 +12,8 @@ Module JSONController
         Public Summary As String
         Public EducationalAttainment As List(Of Dictionary(Of String, String))
         Public WorkingExperience As List(Of Dictionary(Of String, String))
+        Public Certificates As List(Of Dictionary(Of String, String))
+        Public Skills As List(Of String)
     End Class
 
     ''' <summary>
@@ -103,6 +105,9 @@ Module JSONController
             workDict.Add("Company Address", row.Cells("inputCompanyAddress").Value.ToString())
             workDict.Add("Working Years", row.Cells("inputJobYear").Value.ToString())
             workList.Add(workDict)
+        Next
+        For Each row As DataGridViewRow In Form1.tableCertificates.Rows
+            Dim certDict As New Dictionary(Of String, String)
         Next
         userInfo.WorkingExperience = workList
         Return userInfo

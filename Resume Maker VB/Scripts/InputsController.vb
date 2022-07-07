@@ -40,6 +40,24 @@
                 End If
             Next
         Next
+        For row = 0 To Form1.tableCertificates.Rows.Count - 1
+            For column = 0 To Form1.tableCertificates.Columns.Count - 1
+                If Form1.tableCertificates.Rows(row).Cells(column).Value Is Nothing OrElse
+                        Form1.tableCertificates.Rows(row).Cells(column).Value.ToString().Trim() = "" Then
+                    MessageBox.Show("Table of Certificates field is incomplete.", "Error")
+                    Return False
+                End If
+            Next
+        Next
+        For row = 0 To Form1.tableSkills.Rows.Count - 1
+            For column = 0 To Form1.tableSkills.Columns.Count - 1
+                If Form1.tableSkills.Rows(row).Cells(column).Value Is Nothing OrElse
+                        Form1.tableSkills.Rows(row).Cells(column).Value.ToString().Trim() = "" Then
+                    MessageBox.Show("Table of Skills field is incomplete.", "Error")
+                    Return False
+                End If
+            Next
+        Next
         Return True
     End Function
 End Module
