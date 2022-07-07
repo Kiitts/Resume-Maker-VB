@@ -14,9 +14,11 @@ Module PDFController
                                                         FileMode.Create))
         ' Fonts
         Dim tNRoman As BaseFont = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, False)
-        Dim nameFont As Font = New Font(tNRoman, 20, Font.BOLD)
+        Dim nameFont As New Font(tNRoman, 20, Font.BOLD)
+        Dim normalFont As New Font(tNRoman, 12)
 
         ' Texts
+        ' Name
         Dim nameParagraph As Paragraph
         If userInfo.MiddleName.Trim() IsNot "" Then
             nameParagraph = New Paragraph(
@@ -28,9 +30,16 @@ Module PDFController
                 nameFont)
         End If
         nameParagraph.Alignment = Element.ALIGN_CENTER
+        ' Contact Details
+        Dim contactParagraph As New Paragraph($"{userInfo.Address}" + vbCrLf +
+                                              $"{userInfo.ContactNumber}" + vbCrLf +
+                                              $"{userInfo.EmailAddress}", normalFont)
+        contactParagraph.Alignment = Element.ALIGN_CENTER
+
 
         doc.Open()
         doc.Add(nameParagraph)
+        doc.Add(contactParagraph)
         doc.Close()
     End Sub
 End Module
