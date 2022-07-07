@@ -8,7 +8,7 @@
     End Sub
 
     Private Sub buttonGenerateJSON_Click(sender As Object, e As EventArgs) Handles buttonGenerateJSON.Click
-        Test()
+        IsRequiredInputComplete(Me)
     End Sub
 
     ' Buttons that Control Tables
