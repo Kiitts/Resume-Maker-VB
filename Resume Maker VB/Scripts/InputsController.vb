@@ -1,5 +1,11 @@
 ﻿Module InputsController
-    Public Function IsRequiredInputComplete(Form1 As Form1) As Boolean
+
+    ''' <summary>
+    ''' Will check if the required inputs are filled
+    ''' </summary>
+    ''' <param name="Form1">reference of form to check inputs</param>
+    ''' <returns>return true if the input are complete</returns>
+    Public Function IsRequiredInputComplete() As Boolean
         If Form1.inputName.Text.Trim() = "" Then
             MessageBox.Show("Name input field is empty.", "Error")
             Return False
