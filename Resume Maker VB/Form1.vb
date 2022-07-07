@@ -7,14 +7,21 @@
         End If
     End Sub
 
+    ' Button that control JSON
     Private Sub buttonGenerateJSON_Click(sender As Object, e As EventArgs) Handles buttonGenerateJSON.Click
         If IsRequiredInputComplete() Then
             If jsonFolderSelect.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
                 GenerateJSON(jsonFolderSelect.SelectedPath)
-                MessageBox.Show("JSON is now Generated!", "Success!")
             End If
         End If
     End Sub
+    Private Sub buttonUploadJSON_Click(sender As Object, e As EventArgs) Handles buttonUploadJSON.Click
+        jsonFileSelect.Filter = "JSON Files (*.json)|*.json"
+        If jsonFileSelect.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            UploadJSON(jsonFileSelect.FileName)
+        End If
+    End Sub
+    ' End of Button that control JSON
 
     ' Buttons that Control Tables
     Private Sub buttonAddRowEducational_Click(sender As Object, e As EventArgs) Handles buttonAddRowEducational.Click

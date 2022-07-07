@@ -55,5 +55,50 @@ Module JSONController
         Dim json As String = JsonConvert.SerializeObject(userInfo, Formatting.Indented)
 
         File.WriteAllText(path + $"\{userInfo.FirstName}_{userInfo.LastName}.json", json)
+        MessageBox.Show("JSON is now Generated!", "Success!")
+    End Sub
+
+    ''' <summary>
+    ''' Upload the JSON and generate inputs from the selected json file
+    ''' </summary>
+    ''' <param name="path">reference where the json saved</param>
+    Public Sub UploadJSON(path As String)
+        Dim json As String = File.ReadAllText(path)
+        Static userInfo As UserInfo
+        Try
+            userInfo = JsonConvert.DeserializeObject(Of UserInfo)(json)
+        Catch ex As Exception
+            MessageBox.Show("Wrong JSON is used", "Error")
+        End Try
+        If userInfo IsNot Nothing Then
+            Form1.inputFirstName.Text = userInfo.FirstName
+            Form1.inputMiddleName.Text = userInfo.MiddleName
+            Form1.inputLastName.Text = userInfo.LastName
+            Form1.inputAddress.Text = userInfo.Address
+            Form1.inputNumber.Text = userInfo.ContactNumber
+            Form1.inputEmail.Text = userInfo.EmailAddress
+            Form1.inputSummary.Text = userInfo.Summary
+            For Each educDict As Dictionary(Of String, String) In userInfo.EducationalAttainment
+                Dim row As Integer = Form1.tableEducational.Rows.Add()
+                Form1.tableEducational.Rows(row).Cells("inputSchool").Value = educDict("School")
+                Form1.tableEducational.Rows(row).Cells("inputDegree").Value = educDict("Degree")
+                Form1.tableEducational.Rows(row).Cells("inputYearAttended").Value =
+                    educDict("Year Attended")
+            Next
+            For Each workDict As Dictionary(Of String, String) In userInfo.WorkingExperience
+                Dim row As Integer = Form1.tableExperience.Rows.Add()
+                Form1.tableExperience.Rows(row).Cells("inputJobPosition").Value =
+                    workDict("Job Position")
+                Form1.tableExperience.Rows(row).Cells("inputJobDescription").Value =
+                    workDict("Job Description")
+                Form1.tableExperience.Rows(row).Cells("inputCompanyName").Value =
+                    workDict("Company Name")
+                Form1.tableExperience.Rows(row).Cells("inputCompanyAddress").Value =
+                    workDict("Company Address")
+                Form1.tableExperience.Rows(row).Cells("inputJobYear").Value =
+                    workDict("Working Years")
+            Next
+            MessageBox.Show("Inputs are now Generated!", "Success!")
+        End If
     End Sub
 End Module
