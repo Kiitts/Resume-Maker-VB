@@ -106,10 +106,20 @@ Module JSONController
             workDict.Add("Working Years", row.Cells("inputJobYear").Value.ToString())
             workList.Add(workDict)
         Next
+        userInfo.WorkingExperience = workList
+        Dim certList As New List(Of Dictionary(Of String, String))
         For Each row As DataGridViewRow In Form1.tableCertificates.Rows
             Dim certDict As New Dictionary(Of String, String)
+            certDict.Add("Title", row.Cells("inputTitle").Value.ToString())
+            certDict.Add("Issued", row.Cells("inputIssued").Value.ToString())
+            certList.Add(certDict)
         Next
-        userInfo.WorkingExperience = workList
+        userInfo.Certificates = certList
+        Dim skillList As New List(Of String)
+        For Each row As DataGridViewRow In Form1.tableSkills.Rows
+            skillList.Add(row.Cells("inputSkill").Value.ToString())
+        Next
+        userInfo.Skills = skillList
         Return userInfo
     End Function
 
