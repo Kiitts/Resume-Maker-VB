@@ -70,6 +70,21 @@ Module JSONController
                         workDict("Working Years")
                 Next
             End If
+            If userInfo.Certificates IsNot Nothing Then
+                For Each certDict As Dictionary(Of String, String) In userInfo.Certificates
+                    Dim row As Integer = Form1.tableCertificates.Rows.Add()
+                    Form1.tableCertificates.Rows(row).Cells("inputTitle").Value =
+                        certDict("Title")
+                    Form1.tableCertificates.Rows(row).Cells("inputIssued").Value =
+                        certDict("Issued")
+                Next
+            End If
+            If userInfo.Skills IsNot Nothing Then
+                For Each skill As String In userInfo.Skills
+                    Dim row As Integer = Form1.tableSkills.Rows.Add()
+                    Form1.tableSkills.Rows(row).Cells("inputSkill").Value = skill
+                Next
+            End If
             MessageBox.Show("Inputs are now Generated!", "Success!")
         End If
     End Sub
