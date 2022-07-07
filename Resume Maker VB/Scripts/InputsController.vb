@@ -26,7 +26,7 @@
             For column = 0 To Form1.tableEducational.Columns.Count - 1
                 If Form1.tableEducational.Rows(row).Cells(column).Value Is Nothing OrElse
                     Form1.tableEducational.Rows(row).Cells(column).Value.ToString().Trim() = "" Then
-                    MessageBox.Show("Table of Educational Attainment field is empty.", "Error")
+                    MessageBox.Show("Table of Educational Attainment field is incomplete.", "Error")
                     Return False
                 End If
             Next
@@ -35,7 +35,7 @@
             For column = 0 To Form1.tableExperience.Columns.Count - 1
                 If Form1.tableExperience.Rows(row).Cells(column).Value Is Nothing OrElse
                         Form1.tableExperience.Rows(row).Cells(column).Value.ToString().Trim() = "" Then
-                    MessageBox.Show("Table of Working Experience field is empty.", "Error")
+                    MessageBox.Show("Table of Working Experience field is incomplete.", "Error")
                     Return False
                 End If
             Next

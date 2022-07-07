@@ -1,11 +1,4 @@
 ﻿Public Class Form1
-    Private Sub checkEnableWorkingExperience_CheckedChanged(sender As Object, e As EventArgs)
-        If checkEnableWorkingExperience.Checked Then
-            tableExperience.Enabled = True
-        Else
-            tableExperience.Enabled = False
-        End If
-    End Sub
 
     ' Button that control JSON
     Private Sub buttonGenerateJSON_Click(sender As Object, e As EventArgs) Handles buttonGenerateJSON.Click

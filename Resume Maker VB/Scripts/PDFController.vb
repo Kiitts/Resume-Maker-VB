@@ -38,7 +38,7 @@ Module PDFController
                                               $"{userInfo.EmailAddress}", normalFont)
         contactParagraph.Alignment = Element.ALIGN_CENTER
         ' Educational Attainment
-        Static educTable As PdfPTable = New PdfPTable(3)
+        Dim educTable As New PdfPTable(3)
         If userInfo.EducationalAttainment.Count > 0 Then
             educTable.WidthPercentage = 100
             educTable.AddCell(New Paragraph("School", tableHeader))
@@ -48,6 +48,23 @@ Module PDFController
                 educTable.AddCell(New Paragraph(educDict("School"), normalFont))
                 educTable.AddCell(New Paragraph(educDict("Degree"), normalFont))
                 educTable.AddCell(New Paragraph(educDict("Year Attended"), normalFont))
+            Next
+        End If
+        ' Working Experience
+        Dim worktable As New PdfPTable(5)
+        If userInfo.WorkingExperience.Count > 0 Then
+            worktable.WidthPercentage = 100
+            worktable.AddCell(New Paragraph("Job Position", tableHeader))
+            worktable.AddCell(New Paragraph("Job Description", tableHeader))
+            worktable.AddCell(New Paragraph("Company Name", tableHeader))
+            worktable.AddCell(New Paragraph("Company Address", tableHeader))
+            worktable.AddCell(New Paragraph("Working Years", tableHeader))
+            For Each workDict As Dictionary(Of String, String) In userInfo.WorkingExperience
+                worktable.AddCell(New Paragraph(workDict("Job Position"), normalFont))
+                worktable.AddCell(New Paragraph(workDict("Job Description"), normalFont))
+                worktable.AddCell(New Paragraph(workDict("Company Name"), normalFont))
+                worktable.AddCell(New Paragraph(workDict("Company Address"), normalFont))
+                worktable.AddCell(New Paragraph(workDict("Working Years"), normalFont))
             Next
         End If
 
@@ -64,6 +81,12 @@ Module PDFController
             doc.Add(New Paragraph("Educational Attainment:", subHeader))
             doc.Add(New Paragraph(vbCrLf))
             doc.Add(educTable)
+        End If
+        doc.Add(New Paragraph(vbCrLf))
+        If userInfo.WorkingExperience.Count > 0 Then
+            doc.Add(New Paragraph("Working Experience:", subHeader))
+            doc.Add(New Paragraph(vbCrLf))
+            doc.Add(worktable)
         End If
         doc.Close()
     End Sub
