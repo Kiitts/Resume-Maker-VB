@@ -3,7 +3,9 @@ Imports Newtonsoft.Json
 Module JSONController
     <Serializable>
     Class UserInfo
-        Public Name As String
+        Public FirstName As String
+        Public MiddleName As String
+        Public LastName As String
         Public Address As String
         Public ContactNumber As String
         Public EmailAddress As String
@@ -19,7 +21,9 @@ Module JSONController
     ''' <param name="path">what directory should the json file be saved</param>
     Public Sub GenerateJSON(path As String)
         Dim userInfo As UserInfo = New UserInfo()
-        userInfo.Name = Form1.inputName.Text
+        userInfo.FirstName = Form1.inputFirstName.Text
+        userInfo.MiddleName = Form1.inputMiddleName.Text
+        userInfo.LastName = Form1.inputLastName.Text
         userInfo.Address = Form1.inputAddress.Text
         userInfo.ContactNumber = Form1.inputNumber.Text
         userInfo.EmailAddress = Form1.inputEmail.Text
@@ -50,5 +54,6 @@ Module JSONController
 
         Dim json As String = JsonConvert.SerializeObject(userInfo, Formatting.Indented)
 
+        File.WriteAllText(path + $"\{userInfo.FirstName}_{userInfo.LastName}.json", json)
     End Sub
 End Module

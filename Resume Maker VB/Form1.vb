@@ -8,8 +8,12 @@
     End Sub
 
     Private Sub buttonGenerateJSON_Click(sender As Object, e As EventArgs) Handles buttonGenerateJSON.Click
-        GenerateJSON("ASD")
-        IsRequiredInputComplete()
+        If IsRequiredInputComplete() Then
+            If jsonFolderSelect.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+                GenerateJSON(jsonFolderSelect.SelectedPath)
+                MessageBox.Show("JSON is now Generated!", "Success!")
+            End If
+        End If
     End Sub
 
     ' Buttons that Control Tables
