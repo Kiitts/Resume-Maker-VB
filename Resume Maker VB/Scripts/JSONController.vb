@@ -11,7 +11,6 @@ Module JSONController
         Public EmailAddress As String
         Public Summary As String
         Public EducationalAttainment As List(Of Dictionary(Of String, String))
-        Public EnableExperience As Boolean
         Public WorkingExperience As List(Of Dictionary(Of String, String))
     End Class
 
@@ -95,20 +94,17 @@ Module JSONController
             educList.Add(educDict)
         Next
         userInfo.EducationalAttainment = educList
-        userInfo.EnableExperience = Form1.checkEnableWorkingExperience.Checked
-        If userInfo.EnableExperience Then
-            Dim workList As List(Of Dictionary(Of String, String)) = New List(Of Dictionary(Of String, String))
-            For Each row As DataGridViewRow In Form1.tableExperience.Rows
-                Dim workDict As Dictionary(Of String, String) = New Dictionary(Of String, String)
-                workDict.Add("Job Position", row.Cells("inputJobPosition").Value.ToString())
-                workDict.Add("Job Description", row.Cells("inputJobDescription").Value.ToString())
-                workDict.Add("Company Name", row.Cells("inputCompanyName").Value.ToString())
-                workDict.Add("Company Address", row.Cells("inputCompanyAddress").Value.ToString())
-                workDict.Add("Working Years", row.Cells("inputJobYear").Value.ToString())
-                workList.Add(workDict)
-            Next
-            userInfo.WorkingExperience = workList
-        End If
+        Dim workList As List(Of Dictionary(Of String, String)) = New List(Of Dictionary(Of String, String))
+        For Each row As DataGridViewRow In Form1.tableExperience.Rows
+            Dim workDict As Dictionary(Of String, String) = New Dictionary(Of String, String)
+            workDict.Add("Job Position", row.Cells("inputJobPosition").Value.ToString())
+            workDict.Add("Job Description", row.Cells("inputJobDescription").Value.ToString())
+            workDict.Add("Company Name", row.Cells("inputCompanyName").Value.ToString())
+            workDict.Add("Company Address", row.Cells("inputCompanyAddress").Value.ToString())
+            workDict.Add("Working Years", row.Cells("inputJobYear").Value.ToString())
+            workList.Add(workDict)
+        Next
+        userInfo.WorkingExperience = workList
         Return userInfo
     End Function
 

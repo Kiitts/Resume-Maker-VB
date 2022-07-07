@@ -31,17 +31,15 @@
                 End If
             Next
         Next
-        If Form1.checkEnableWorkingExperience.Checked Then
-            For row = 0 To Form1.tableExperience.Rows.Count - 1
-                For column = 0 To Form1.tableExperience.Columns.Count - 1
-                    If Form1.tableExperience.Rows(row).Cells(column).Value Is Nothing OrElse
+        For row = 0 To Form1.tableExperience.Rows.Count - 1
+            For column = 0 To Form1.tableExperience.Columns.Count - 1
+                If Form1.tableExperience.Rows(row).Cells(column).Value Is Nothing OrElse
                         Form1.tableExperience.Rows(row).Cells(column).Value.ToString().Trim() = "" Then
-                        MessageBox.Show("Table of Working Experience field is empty.", "Error")
-                        Return False
-                    End If
-                Next
+                    MessageBox.Show("Table of Working Experience field is empty.", "Error")
+                    Return False
+                End If
             Next
-        End If
+        Next
         Return True
     End Function
 End Module

@@ -1,5 +1,5 @@
 ﻿Public Class Form1
-    Private Sub checkEnableWorkingExperience_CheckedChanged(sender As Object, e As EventArgs) Handles checkEnableWorkingExperience.CheckedChanged
+    Private Sub checkEnableWorkingExperience_CheckedChanged(sender As Object, e As EventArgs)
         If checkEnableWorkingExperience.Checked Then
             tableExperience.Enabled = True
         Else
@@ -29,9 +29,7 @@
     End Sub
 
     Private Sub buttonAddRowExperience_Click(sender As Object, e As EventArgs) Handles buttonAddRowExperience.Click
-        If checkEnableWorkingExperience.Checked Then
-            tableExperience.Rows.Add()
-        End If
+        tableExperience.Rows.Add()
     End Sub
 
     Private Sub buttonRemoveRowEducational_Click(sender As Object, e As EventArgs) Handles buttonRemoveRowEducational.Click
@@ -41,10 +39,8 @@
     End Sub
 
     Private Sub buttonRemoveRowExperience_Click(sender As Object, e As EventArgs) Handles buttonRemoveRowExperience.Click
-        If checkEnableWorkingExperience.Checked Then
-            If tableExperience.Rows.Count > 0 Then
-                tableExperience.Rows.RemoveAt(tableExperience.Rows.Count - 1)
-            End If
+        If tableExperience.Rows.Count > 0 Then
+            tableExperience.Rows.RemoveAt(tableExperience.Rows.Count - 1)
         End If
     End Sub
 
