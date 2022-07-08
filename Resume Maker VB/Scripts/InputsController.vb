@@ -60,4 +60,21 @@
         Next
         Return True
     End Function
+
+    ''' <summary>
+    ''' will clear all the inputted inputs
+    ''' </summary>
+    Public Sub ClearInputs()
+        Form1.inputFirstName.Text = ""
+        Form1.inputMiddleName.Text = ""
+        Form1.inputLastName.Text = ""
+        Form1.inputAddress.Text = ""
+        Form1.inputNumber.Text = ""
+        Form1.inputEmail.Text = ""
+        Form1.inputSummary.Text = ""
+        Form1.tableEducational.Rows.Clear()
+        Form1.tableExperience.Rows.Clear()
+        Form1.tableCertificates.Rows.Clear()
+        Form1.tableSkills.Rows.Clear()
+    End Sub
 End Module

@@ -78,6 +78,22 @@ Module PDFController
                 certTable.AddCell(New Paragraph(certDict("Issued"), normalFont))
             Next
         End If
+        ' Skills Table
+        Dim skillTable As PdfPTable
+        If userInfo.Skills.Count < 6 Then
+            skillTable = New PdfPTable(1)
+        ElseIf userInfo.Skills.Count < 11 Then
+            skillTable = New PdfPTable(2)
+        Else
+            skillTable = New PdfPTable(3)
+        End If
+        If userInfo.Skills.Count > 0 Then
+            skillTable.WidthPercentage = 100
+            skillTable.DefaultCell.Border = Rectangle.NO_BORDER
+            For Each skill As String In userInfo.Skills
+                skillTable.AddCell(New Paragraph($"- {skill}", normalFont))
+            Next
+        End If
 
         ' Creating resume PDF
         doc.Open()
@@ -104,6 +120,12 @@ Module PDFController
             doc.Add(New Paragraph("Certificates:", subHeader))
             doc.Add(New Paragraph(vbCrLf))
             doc.Add(certTable)
+        End If
+        If userInfo.Skills.Count > 0 Then
+            doc.Add(New Paragraph(vbCrLf))
+            doc.Add(New Paragraph("Skills:", subHeader))
+            doc.Add(New Paragraph(vbCrLf))
+            doc.Add(skillTable)
         End If
         doc.Close()
         If withJson Then

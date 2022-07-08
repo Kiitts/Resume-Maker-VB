@@ -1,10 +1,11 @@
 ﻿Public Class Form1
 
     ' Button that control JSON
-    Private Sub buttonGenerateJSON_Click(sender As Object, e As EventArgs) Handles buttonGenerateJSON.Click
+    Private Sub buttonGenerateJSON_Click_1(sender As Object, e As EventArgs) Handles buttonGenerateJSON.Click
         If IsRequiredInputComplete() Then
             If jsonFolderSelect.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
                 GenerateJSON(jsonFolderSelect.SelectedPath)
+                ClearInputs()
             End If
         End If
     End Sub
@@ -68,7 +69,11 @@
                     withJson = True
                 End If
                 GeneratePDF(jsonFolderSelect.SelectedPath, withJson)
+                ClearInputs()
             End If
         End If
+    End Sub
+    Private Sub buttonReset_Click_1(sender As Object, e As EventArgs) Handles buttonReset.Click
+        ClearInputs()
     End Sub
 End Class
