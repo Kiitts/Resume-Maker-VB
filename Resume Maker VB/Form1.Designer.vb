@@ -97,7 +97,7 @@ Partial Class Form1
         Me.inputFirstName.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.inputFirstName.Location = New System.Drawing.Point(125, 38)
         Me.inputFirstName.Name = "inputFirstName"
-        Me.inputFirstName.Size = New System.Drawing.Size(543, 24)
+        Me.inputFirstName.Size = New System.Drawing.Size(526, 24)
         Me.inputFirstName.TabIndex = 1
         '
         'labelAddress
@@ -117,7 +117,7 @@ Partial Class Form1
         Me.inputAddress.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.inputAddress.Location = New System.Drawing.Point(98, 128)
         Me.inputAddress.Name = "inputAddress"
-        Me.inputAddress.Size = New System.Drawing.Size(570, 24)
+        Me.inputAddress.Size = New System.Drawing.Size(553, 24)
         Me.inputAddress.TabIndex = 4
         '
         'labelNumber
@@ -137,7 +137,7 @@ Partial Class Form1
         Me.inputNumber.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.inputNumber.Location = New System.Drawing.Point(160, 158)
         Me.inputNumber.Name = "inputNumber"
-        Me.inputNumber.Size = New System.Drawing.Size(508, 24)
+        Me.inputNumber.Size = New System.Drawing.Size(491, 24)
         Me.inputNumber.TabIndex = 5
         '
         'lableEmail
@@ -157,7 +157,7 @@ Partial Class Form1
         Me.inputEmail.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.inputEmail.Location = New System.Drawing.Point(151, 188)
         Me.inputEmail.Name = "inputEmail"
-        Me.inputEmail.Size = New System.Drawing.Size(517, 24)
+        Me.inputEmail.Size = New System.Drawing.Size(500, 24)
         Me.inputEmail.TabIndex = 7
         '
         'labelSummary
@@ -179,7 +179,7 @@ Partial Class Form1
         Me.inputSummary.Multiline = True
         Me.inputSummary.Name = "inputSummary"
         Me.inputSummary.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.inputSummary.Size = New System.Drawing.Size(657, 134)
+        Me.inputSummary.Size = New System.Drawing.Size(640, 134)
         Me.inputSummary.TabIndex = 9
         '
         'tableEducational
@@ -194,7 +194,7 @@ Partial Class Form1
         Me.tableEducational.Location = New System.Drawing.Point(6, 22)
         Me.tableEducational.Name = "tableEducational"
         Me.tableEducational.RowTemplate.Height = 25
-        Me.tableEducational.Size = New System.Drawing.Size(643, 169)
+        Me.tableEducational.Size = New System.Drawing.Size(626, 169)
         Me.tableEducational.TabIndex = 10
         '
         'inputSchool
@@ -219,7 +219,7 @@ Partial Class Form1
         Me.groupWorkingExperience.Controls.Add(Me.tableExperience)
         Me.groupWorkingExperience.Location = New System.Drawing.Point(13, 586)
         Me.groupWorkingExperience.Name = "groupWorkingExperience"
-        Me.groupWorkingExperience.Size = New System.Drawing.Size(655, 199)
+        Me.groupWorkingExperience.Size = New System.Drawing.Size(638, 199)
         Me.groupWorkingExperience.TabIndex = 11
         Me.groupWorkingExperience.TabStop = False
         Me.groupWorkingExperience.Text = "Working Experience"
@@ -236,7 +236,7 @@ Partial Class Form1
         Me.tableExperience.Location = New System.Drawing.Point(6, 22)
         Me.tableExperience.Name = "tableExperience"
         Me.tableExperience.RowTemplate.Height = 25
-        Me.tableExperience.Size = New System.Drawing.Size(642, 171)
+        Me.tableExperience.Size = New System.Drawing.Size(625, 171)
         Me.tableExperience.TabIndex = 1
         '
         'inputJobPosition
@@ -270,7 +270,7 @@ Partial Class Form1
         Me.buttonUploadJSON.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.buttonUploadJSON.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonUploadJSON.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonUploadJSON.Location = New System.Drawing.Point(538, 12)
+        Me.buttonUploadJSON.Location = New System.Drawing.Point(521, 12)
         Me.buttonUploadJSON.Name = "buttonUploadJSON"
         Me.buttonUploadJSON.Size = New System.Drawing.Size(130, 23)
         Me.buttonUploadJSON.TabIndex = 12
@@ -283,7 +283,7 @@ Partial Class Form1
         Me.buttonGenerateResume.BackColor = System.Drawing.Color.Aqua
         Me.buttonGenerateResume.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonGenerateResume.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonGenerateResume.Location = New System.Drawing.Point(511, 1218)
+        Me.buttonGenerateResume.Location = New System.Drawing.Point(494, 1218)
         Me.buttonGenerateResume.Name = "buttonGenerateResume"
         Me.buttonGenerateResume.Size = New System.Drawing.Size(157, 23)
         Me.buttonGenerateResume.TabIndex = 13
@@ -305,7 +305,7 @@ Partial Class Form1
         Me.buttonAddRowEducational.BackColor = System.Drawing.Color.Aqua
         Me.buttonAddRowEducational.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonAddRowEducational.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonAddRowEducational.Location = New System.Drawing.Point(675, 546)
+        Me.buttonAddRowEducational.Location = New System.Drawing.Point(658, 546)
         Me.buttonAddRowEducational.Name = "buttonAddRowEducational"
         Me.buttonAddRowEducational.Size = New System.Drawing.Size(24, 23)
         Me.buttonAddRowEducational.TabIndex = 16
@@ -318,7 +318,7 @@ Partial Class Form1
         Me.buttonAddRowExperience.BackColor = System.Drawing.Color.Aqua
         Me.buttonAddRowExperience.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonAddRowExperience.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonAddRowExperience.Location = New System.Drawing.Point(675, 756)
+        Me.buttonAddRowExperience.Location = New System.Drawing.Point(658, 756)
         Me.buttonAddRowExperience.Name = "buttonAddRowExperience"
         Me.buttonAddRowExperience.Size = New System.Drawing.Size(24, 23)
         Me.buttonAddRowExperience.TabIndex = 17
@@ -331,7 +331,7 @@ Partial Class Form1
         Me.buttonRemoveRowEducational.BackColor = System.Drawing.Color.Aqua
         Me.buttonRemoveRowEducational.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonRemoveRowEducational.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonRemoveRowEducational.Location = New System.Drawing.Point(705, 546)
+        Me.buttonRemoveRowEducational.Location = New System.Drawing.Point(688, 546)
         Me.buttonRemoveRowEducational.Name = "buttonRemoveRowEducational"
         Me.buttonRemoveRowEducational.Size = New System.Drawing.Size(24, 23)
         Me.buttonRemoveRowEducational.TabIndex = 18
@@ -344,7 +344,7 @@ Partial Class Form1
         Me.buttonRemoveRowExperience.BackColor = System.Drawing.Color.Aqua
         Me.buttonRemoveRowExperience.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonRemoveRowExperience.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonRemoveRowExperience.Location = New System.Drawing.Point(705, 756)
+        Me.buttonRemoveRowExperience.Location = New System.Drawing.Point(688, 756)
         Me.buttonRemoveRowExperience.Name = "buttonRemoveRowExperience"
         Me.buttonRemoveRowExperience.Size = New System.Drawing.Size(24, 23)
         Me.buttonRemoveRowExperience.TabIndex = 19
@@ -358,7 +358,7 @@ Partial Class Form1
         Me.inputMiddleName.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.inputMiddleName.Location = New System.Drawing.Point(134, 68)
         Me.inputMiddleName.Name = "inputMiddleName"
-        Me.inputMiddleName.Size = New System.Drawing.Size(534, 24)
+        Me.inputMiddleName.Size = New System.Drawing.Size(517, 24)
         Me.inputMiddleName.TabIndex = 2
         '
         'labelMiddleName
@@ -378,7 +378,7 @@ Partial Class Form1
         Me.inputLastName.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.inputLastName.Location = New System.Drawing.Point(134, 98)
         Me.inputLastName.Name = "inputLastName"
-        Me.inputLastName.Size = New System.Drawing.Size(534, 24)
+        Me.inputLastName.Size = New System.Drawing.Size(517, 24)
         Me.inputLastName.TabIndex = 3
         '
         'labelLastName
@@ -397,7 +397,7 @@ Partial Class Form1
         Me.buttonRemoveRowCertificates.BackColor = System.Drawing.Color.Aqua
         Me.buttonRemoveRowCertificates.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonRemoveRowCertificates.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonRemoveRowCertificates.Location = New System.Drawing.Point(705, 961)
+        Me.buttonRemoveRowCertificates.Location = New System.Drawing.Point(688, 961)
         Me.buttonRemoveRowCertificates.Name = "buttonRemoveRowCertificates"
         Me.buttonRemoveRowCertificates.Size = New System.Drawing.Size(24, 23)
         Me.buttonRemoveRowCertificates.TabIndex = 26
@@ -410,7 +410,7 @@ Partial Class Form1
         Me.buttonAddRowCertificates.BackColor = System.Drawing.Color.Aqua
         Me.buttonAddRowCertificates.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonAddRowCertificates.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonAddRowCertificates.Location = New System.Drawing.Point(675, 961)
+        Me.buttonAddRowCertificates.Location = New System.Drawing.Point(658, 961)
         Me.buttonAddRowCertificates.Name = "buttonAddRowCertificates"
         Me.buttonAddRowCertificates.Size = New System.Drawing.Size(24, 23)
         Me.buttonAddRowCertificates.TabIndex = 25
@@ -424,7 +424,7 @@ Partial Class Form1
         Me.groupCertificates.Controls.Add(Me.tableCertificates)
         Me.groupCertificates.Location = New System.Drawing.Point(13, 791)
         Me.groupCertificates.Name = "groupCertificates"
-        Me.groupCertificates.Size = New System.Drawing.Size(655, 199)
+        Me.groupCertificates.Size = New System.Drawing.Size(638, 199)
         Me.groupCertificates.TabIndex = 24
         Me.groupCertificates.TabStop = False
         Me.groupCertificates.Text = "Certificates"
@@ -441,7 +441,7 @@ Partial Class Form1
         Me.tableCertificates.Location = New System.Drawing.Point(6, 22)
         Me.tableCertificates.Name = "tableCertificates"
         Me.tableCertificates.RowTemplate.Height = 25
-        Me.tableCertificates.Size = New System.Drawing.Size(642, 171)
+        Me.tableCertificates.Size = New System.Drawing.Size(625, 171)
         Me.tableCertificates.TabIndex = 1
         '
         'inputTitle
@@ -460,7 +460,7 @@ Partial Class Form1
         Me.buttonRemoveRowSkills.BackColor = System.Drawing.Color.Aqua
         Me.buttonRemoveRowSkills.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonRemoveRowSkills.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonRemoveRowSkills.Location = New System.Drawing.Point(705, 1166)
+        Me.buttonRemoveRowSkills.Location = New System.Drawing.Point(688, 1166)
         Me.buttonRemoveRowSkills.Name = "buttonRemoveRowSkills"
         Me.buttonRemoveRowSkills.Size = New System.Drawing.Size(24, 23)
         Me.buttonRemoveRowSkills.TabIndex = 29
@@ -473,7 +473,7 @@ Partial Class Form1
         Me.buttonAddRowSkills.BackColor = System.Drawing.Color.Aqua
         Me.buttonAddRowSkills.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonAddRowSkills.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonAddRowSkills.Location = New System.Drawing.Point(675, 1166)
+        Me.buttonAddRowSkills.Location = New System.Drawing.Point(658, 1166)
         Me.buttonAddRowSkills.Name = "buttonAddRowSkills"
         Me.buttonAddRowSkills.Size = New System.Drawing.Size(24, 23)
         Me.buttonAddRowSkills.TabIndex = 28
@@ -487,7 +487,7 @@ Partial Class Form1
         Me.groupSkills.Controls.Add(Me.tableSkills)
         Me.groupSkills.Location = New System.Drawing.Point(13, 996)
         Me.groupSkills.Name = "groupSkills"
-        Me.groupSkills.Size = New System.Drawing.Size(655, 199)
+        Me.groupSkills.Size = New System.Drawing.Size(638, 199)
         Me.groupSkills.TabIndex = 27
         Me.groupSkills.TabStop = False
         Me.groupSkills.Text = "Skills"
@@ -504,7 +504,7 @@ Partial Class Form1
         Me.tableSkills.Location = New System.Drawing.Point(6, 22)
         Me.tableSkills.Name = "tableSkills"
         Me.tableSkills.RowTemplate.Height = 25
-        Me.tableSkills.Size = New System.Drawing.Size(642, 171)
+        Me.tableSkills.Size = New System.Drawing.Size(625, 171)
         Me.tableSkills.TabIndex = 1
         '
         'inputSkill
@@ -519,10 +519,10 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.tableEducational)
         Me.GroupBox1.Location = New System.Drawing.Point(13, 381)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(655, 199)
+        Me.GroupBox1.Size = New System.Drawing.Size(638, 199)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Working Experience"
+        Me.GroupBox1.Text = "Educational Attainment"
         '
         'buttonGenerateJSON
         '
@@ -530,7 +530,7 @@ Partial Class Form1
         Me.buttonGenerateJSON.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.buttonGenerateJSON.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.buttonGenerateJSON.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.buttonGenerateJSON.Location = New System.Drawing.Point(348, 1218)
+        Me.buttonGenerateJSON.Location = New System.Drawing.Point(331, 1218)
         Me.buttonGenerateJSON.Name = "buttonGenerateJSON"
         Me.buttonGenerateJSON.Size = New System.Drawing.Size(157, 23)
         Me.buttonGenerateJSON.TabIndex = 31
